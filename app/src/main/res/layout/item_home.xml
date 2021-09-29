@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-
-    <data>
-        <variable
-            name="viewModel"
-            type="com.wulantorodev.movie.presentation.HomeAdapterViewModel" />
-    </data>
-        
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:layout_margin="8dp">
 
@@ -25,7 +16,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@{viewModel.title}"
+        tools:text="Text"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -38,7 +29,6 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_title"
-        tools:text="@{viewModel.overview}"/>
+        tools:text="Overview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

@@ -1,12 +1,15 @@
 package com.wulantorodev.movie.di.module
 
+import androidx.lifecycle.ViewModel
 import com.wulantorodev.movie.data.HomeDataSource
+import com.wulantorodev.movie.di.scope.ViewMOdelKey
 import com.wulantorodev.movie.presentation.*
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.multibindings.IntoMap
 import retrofit2.Retrofit
-import retrofit2.create
+
 
 @Module
 
@@ -23,15 +26,10 @@ abstract class HomeModule {
         fun providesHomeDataSource(retrofit: Retrofit) : HomeDataSource =
             retrofit.create(HomeDataSource::class.java)
 
-        @JvmStatic
-        @Provides
-        fun providesHomePresenter(
-            callback: HomeViewModelCallback,
-            dataSource: HomeDataSource
-        ) : HomeViewModel = HomeViewModel(callback , dataSource)
-
     }
 
     @Binds
-    abstract fun bindHomeViewModelCallback(activity: HomeActivity): HomeViewModelCallback
+    @IntoMap
+    @ViewMOdelKey(HomeViewModel::class)
+    abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
 }
