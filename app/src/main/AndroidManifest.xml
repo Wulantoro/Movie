@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wulantorodev.movie">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".BelajarApp"
@@ -11,6 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Movie" />
+        android:theme="@style/Theme.Movie">
+        <activity
+            android:name=".presentation.DetailMovieActivity"
+            android:exported="true" />
+    </application>
 
 </manifest>
